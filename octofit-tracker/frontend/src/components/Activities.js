@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
 const codespaceName = process.env.REACT_APP_CODESPACE_NAME;
-const apiBaseUrl = codespaceName
-  ? `https://${codespaceName}-8000.app.github.dev/api`
-  : 'http://localhost:8000/api';
-const endpoint = `${apiBaseUrl}/activities/`;
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/';
 
 function normalizeCollection(payload) {
   if (Array.isArray(payload)) {
